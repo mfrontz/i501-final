@@ -1,8 +1,15 @@
-# Jupyter Notebook
-**.ipynb_checkpoints
+# iPython
+.ipynb*
+__pycache__*
+*.pyc
 
-# Python
+# app
 .env
+scratch.ipynb
 
-# OSX
-**.DS_STORE
+data*
+
+# *.pickle
+
+# macOS
+*.DS_Store
