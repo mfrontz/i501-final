@@ -1,0 +1,9 @@
+name: i501-final
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - ipykernel
+    - dash
+    - pandas
+    - seaborn
