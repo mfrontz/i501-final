@@ -7,5 +7,5 @@ dependencies:
     - pandas
     - python-dotenv
     - streamlit
-#    - plotly==5.19.0
-#    - dash
+    - boto3
+#    - plotly
