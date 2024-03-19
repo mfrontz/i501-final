@@ -4,6 +4,9 @@ dependencies:
   - pip
   - pip:
     - ipykernel
-    - dash
     - pandas
-    - seaborn
+    - python-dotenv
+    - streamlit
+#    - seaborn
+#    - plotly==5.19.0
+#    - dash
