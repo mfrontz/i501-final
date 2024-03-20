@@ -6,7 +6,7 @@ import numpy as np
 import streamlit as st
 #from dotenv import load_dotenv
 
-import utils.b2
+#from utils.b2 import B2
 
 # ------------------------------------------------------
 #                      APP CONSTANTS
@@ -19,18 +19,18 @@ REMOTE_DATA = 'vaccination_data_lab9.csv'
 #load_dotenv()
 
 # load Backblaze connection
-b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
-        key_id=os.environ['B2_KEYID'],
-        secret_key=os.environ['B2_APPKEY'])
+#b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
+#        key_id=os.environ['B2_KEYID'],
+#        secret_key=os.environ['B2_APPKEY'])
 
 # ------------------------------------------------------
 #                        CACHING
 # ------------------------------------------------------
-@st.cache_data
-def get_data():
-    b2.set_bucket(os.environ['B2_BUCKETNAME'])
-    df_remote = b2.get_df(REMOTE_DATA)
-    return df_remote
+#@st.cache_data
+#def get_data():
+#    b2.set_bucket(os.environ['B2_BUCKETNAME'])
+#    df_remote = b2.get_df(REMOTE_DATA)
+#    return df_remote
 
 # ------------------------------------------------------
 #                         APP
@@ -38,7 +38,8 @@ def get_data():
 
 st.title('Vaccinations Among Young Children in the United States')
 
-df_vacc = get_data()
+#df_vacc = get_data()
+df_vacc = pd.read_csv('REMOTE_DATA')
 df_vacc['Birth Year'] = df_vacc['Birth Year'].astype(str)
 
 st.header('MMR Vaccination Rate')
