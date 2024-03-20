@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 import streamlit as st
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 from utils.b2 import B2
 
@@ -16,7 +16,7 @@ REMOTE_DATA = 'vaccination_data_lab9.csv'
 # ------------------------------------------------------
 #                        CONFIG
 # ------------------------------------------------------
-load_dotenv()
+#load_dotenv()
 
 # load Backblaze connection
 b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
