@@ -10,7 +10,7 @@ from utils.b2 import B2
 
 # ------------------------------------------------------
 #                      APP CONSTANTS
-# ------------------------------------------------------
+# -----------------------------------------------------
 REMOTE_DATA = 'vaccination_data_lab9.csv'
 
 # ------------------------------------------------------
@@ -38,9 +38,15 @@ def get_data():
 
 st.title('Vaccinations Among Young Children')
 
-#df_vacc = pd.read_csv(REMOTE_DATA)
 df_vacc = get_data()
 df_vacc['Birth Year'] = df_vacc['Birth Year'].astype(str)
+
+mask = ((df_vacc['Birth Year'] == '2020') &
+        (df_vacc['Vaccine'] == 'MMR'))
+
+chart_data = df_vacc[mask]
+
+st.barchart(chart_data, x = 'Age', y = 'Estimate (%)')
 
 st.header('View of Data Subset')
 st.dataframe(df_vacc)
