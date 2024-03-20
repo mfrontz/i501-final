@@ -40,5 +40,7 @@ st.title('Vaccinations Among Young Children')
 
 #df_vacc = pd.read_csv(REMOTE_DATA)
 df_vacc = get_data()
+df_vacc['Birth Year'] = df_vacc['Birth Year'].astype(str)
 
+st.header('View of Data Subset')
 st.dataframe(df_vacc)
