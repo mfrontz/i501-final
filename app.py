@@ -45,7 +45,8 @@ df_vacc['Birth Year'] = df_vacc['Birth Year'].astype(str)
 st.header('MMR Vaccination Rate')
 st.markdown('''The CDC recommends that children receive their 1st dose of MMR vaccine (Measles, Mumps, and Rubella)  
             at 12-15 months of age, and their second dose at 4-6 years of age.''')
-st.caption('In 2020, what percent of young children in the US had already received their 1st dose of MMR vaccine?')
+#st.caption('In 2020, what percent of young children in the US had already received their 1st dose of MMR vaccine?')
+st.caption('For children born in 2020, what percent have received their 1st dose of MMR vaccine?')
 
 mask = ((df_vacc['Birth Year'] == '2020') &
         (df_vacc['Vaccine'] == 'MMR'))
