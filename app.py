@@ -39,7 +39,7 @@ REMOTE_DATA = 'vaccination_data_lab9.csv'
 st.title('Vaccinations Among Young Children in the United States')
 
 #df_vacc = get_data()
-df_vacc = pd.read_csv('REMOTE_DATA')
+df_vacc = pd.read_csv('vaccination_data_lab9.csv')
 df_vacc['Birth Year'] = df_vacc['Birth Year'].astype(str)
 
 st.header('MMR Vaccination Rate')
