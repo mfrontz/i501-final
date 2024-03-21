@@ -43,9 +43,9 @@ df_vacc = pd.read_csv('vaccination_data_lab9.csv')
 df_vacc['Birth Year'] = df_vacc['Birth Year'].astype(str)
 
 st.header('MMR Vaccination Rate')
-st.markdown('''The CDC recommends that children receive their 1st dose of MMR vaccine (Measles, Mumps, and Rubella)  
+st.markdown('''The CDC recommends that children receive their first dose of MMR vaccine (Measles, Mumps, and Rubella)  
             at 12-15 months of age, and their second dose at 4-6 years of age.''')
-st.caption('For children born in 2020, how many had received their 1st dose of MMR vaccine by various age checkpoints?')
+st.caption('For children born in 2020, how many had received their first dose of MMR vaccine by various age checkpoints?')
 
 mask = ((df_vacc['Birth Year'] == '2020') &
         (df_vacc['Vaccine'] == 'MMR'))
@@ -54,7 +54,7 @@ chart_data = df_vacc[mask]
 
 st.bar_chart(chart_data, x = 'Age', y = 'Estimate (%)')
 
-st.markdown('In 2024, [measles outbreaks](https://www.cdc.gov/measles/cases-outbreaks.html) have been reported in multiple states.')
+st.markdown('In 2024, [cases of measles](https://www.cdc.gov/measles/cases-outbreaks.html) have been reported in multiple states.')
 
 st.header('View of Data Subset')
 st.dataframe(df_vacc)
