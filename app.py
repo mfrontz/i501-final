@@ -54,7 +54,7 @@ chart_data = df_vacc[mask]
 
 st.bar_chart(chart_data, x = 'Age', y = 'Estimate (%)')
 
-st.markdown('''In 2024, [cases of measles](https://www.cdc.gov/measles/cases-outbreaks.html) have been reported among unvaccinated children in multiple states.''')
+st.markdown('In 2024, [measles outbreaks](https://www.cdc.gov/measles/cases-outbreaks.html) have been reported in multiple states.')
 
 st.header('View of Data Subset')
 st.dataframe(df_vacc)
