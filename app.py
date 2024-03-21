@@ -52,7 +52,7 @@ mask = ((df_vacc['Birth Year'] == '2020') &
 
 chart_data = df_vacc[mask]
 
-st.bar_chart(chart_data, x = 'Age', y = 'Estimate (%)', color = '#DC143C')
+st.bar_chart(chart_data, x = 'Age', y = 'Estimate (%)')
 
 st.markdown('Previously declared eliminated in the US, [cases and outbreaks of measles](https://www.cdc.gov/measles/cases-outbreaks.html) continue to periodically occur.')
 
