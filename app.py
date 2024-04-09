@@ -73,7 +73,7 @@ df_vacc = read_data()
 
 # INTRODUCTION
 
-st.title(':rainbow[Protecting Children\'s Health]')
+st.title(':children_crossing: :rainbow[Protecting Children\'s Health]')
 st.subheader('Vaccination Rates for Young Children in the United States')
 st.image('./data/toddler-vaccination.jpg')
 st.caption('''Photo Credit: [SELF x American Academy of Pediatrics Vaccine Photo Project](https://www.flickr.com/photos/selfmagazine/albums/72157710332198661/)''')
@@ -93,8 +93,8 @@ the Centers for Disease Control and Prevention (CDC) recommends that children re
 
 st.caption('''Note: The **Combined 7-vaccine series** includes all necessary doses for:  DTaP, Hep B, Hib, MMR, PCV, Polio, and Varicella.''')
 
-st.markdown(''':rainbow[**How many young children in the United States receive these recommended vaccinations?**]''')
-st.markdown(''':mag_right: Use the interactive charts in this web app to explore CDC data to find answers''')
+st.markdown(''':green[**How many young children in the United States receive these recommended vaccinations?**]''')
+st.markdown(''':mag_right: Use the interactive charts below to find answers by exploring CDC data for child vaccinations''')
 
 st.divider()
 
@@ -126,8 +126,8 @@ filter_map = (df_vacc['Vaccine'] == vacc_option) & (df_vacc['Dose'] == dose_opti
 map_data = df_vacc[filter_map]
 
 # display choropleth map
-st.markdown('#### :blue[' + vacc_option + '] Vaccination Rates by State')
-st.markdown('##### :blue[' + dose_option + '] by Age :blue[' + age_option + '] for Children Born in 2020')
+st.markdown('#### :green[' + vacc_option + '] Vaccination Rates by State')
+st.markdown('##### :green[' + dose_option + '] by Age :green[' + age_option + '] for Children Born in 2020')
 
 fig_map = px.choropleth(map_data, locations = 'State', color = 'Estimate (%)', color_continuous_scale = 'temps_r', locationmode = 'USA-states', scope = 'usa')
 
@@ -164,8 +164,8 @@ filter_line = (df_vacc['Vaccine'] == vacc_option) & (df_vacc['Dose'] == dose_opt
 line_data = df_vacc[filter_line]
 
 # display line graph
-st.markdown('#### :blue[' + vacc_option + '] Vaccination Rates by Birth Year')
-st.markdown('##### :blue[' + dose_option + '] by Age :blue[' + age_option + '] in :blue[' + geo_option +']')
+st.markdown('#### :green[' + vacc_option + '] Vaccination Rates by Birth Year')
+st.markdown('##### :green[' + dose_option + '] by Age :green[' + age_option + '] in :green[' + geo_option +']')
 
 fig_line = px.line(line_data, x = 'Birth Year', y = 'Estimate (%)', color = 'Geographic Area')
 fig_line.update_layout(yaxis_range=[0,100]) # use 0-100 for y-axis scale
@@ -187,7 +187,7 @@ st.divider()
 st.subheader('How do child vaccination rates compare based on sociodemographic factors?')
 
 st.caption(':arrow_forward: The previous filters for **vaccine**, **dose**, and **geographic area** also apply to this chart')
-st.caption(':arrow_forward: Available sociodemographic data is limited to age 24 months (not affected by filter for age checkpoint)')
+st.caption('\* Available sociodemographic data is limited to **age 24 months** (and is **not** affected by filter for age checkpoint)')
 # apply previous filters (vaccine, dose, geographic area - but not age) to generate data subset that only includes 2 four-year birth cohorts 
 filter_soc_dem_data = (df_vacc['Vaccine'] == vacc_option) & (df_vacc['Dose'] == dose_option) & (df_vacc['Geographic Area'] == geo_option) & \
     ((df_vacc['Birth Cohort'] == '2014-2017') | (df_vacc['Birth Cohort'] == '2016-2019'))
@@ -216,8 +216,8 @@ match soc_dem_option:
 soc_dem_bar_data = soc_dem_data[filter_soc_dem_var]
 
 # display bar chart
-st.markdown('#### :blue[' + vacc_option + '] Vaccination Rates by :blue[' + soc_dem_option + ']')
-st.markdown('##### :blue[' + dose_option + '] by Age 24 Months for Two Birth Cohorts in :blue[' + geo_option +']')
+st.markdown('#### :green[' + vacc_option + '] Vaccination Rates by :green[' + soc_dem_option + ']')
+st.markdown('##### :green[' + dose_option + '] by Age 24 Months* for Two Birth Cohorts in :green[' + geo_option +']')
 
 fig_bar = px.bar(soc_dem_bar_data, x = soc_dem_option, y = 'Estimate (%)', color = 'Birth Cohort', barmode = 'group')
 fig_bar.update_layout(yaxis_range=[0,100]) # use 0-100 for y-axis scale
@@ -225,7 +225,7 @@ fig_bar.update_xaxes(categoryorder = 'array', categoryarray = soc_dem_array) # s
 
 st.plotly_chart(fig_bar, use_container_width=True)
 
-st.markdown(''':mag_right: Explore further by selecting different filter choices to change which data are shown in the charts''')
+st.markdown(''':mag_right: Keep exploring by using the filters to change which data are shown''')
 
 st.divider()
 
