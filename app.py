@@ -94,7 +94,7 @@ the Centers for Disease Control and Prevention (CDC) recommends that children re
 st.caption('''Note: The **Combined 7-vaccine series** includes all necessary doses for:  DTaP, Hep B, Hib, MMR, PCV, Polio, and Varicella.''')
 
 st.markdown(''':rainbow[**How many young children in the United States receive these recommended vaccinations?**]''')
-st.markdown('''- Use the interactive charts in this web app to explore CDC data on child vaccination rates''')
+st.markdown(''':mag_right: Use the interactive charts in this web app to explore CDC data to find answers''')
 
 st.divider()
 
@@ -103,6 +103,8 @@ st.divider()
 # user can select filters for vaccine, vaccine dose, and age checkpoint
 
 st.subheader('How do child vaccination rates compare across states?')
+
+st.caption(':arrow_forward: Use these filters to change which vaccine data are displayed in the charts')
 
 # select filter for vaccine type
 vacc_options = tuple(df_vacc['Vaccine'].unique())
@@ -131,6 +133,8 @@ fig_map = px.choropleth(map_data, locations = 'State', color = 'Estimate (%)', c
 
 st.plotly_chart(fig_map, use_container_width=True)
 
+st.markdown(''':mag_right: Select different filter choices to change which data are shown''')
+
 st.divider()
 
 # LINE GRAPH
@@ -140,6 +144,8 @@ st.divider()
 # estimated vaccination rate for entire United States will also be plotted for comparison
 
 st.subheader('How do child vaccination rates compare by year of birth?')
+
+st.caption(':arrow_forward: The previous filters for **vaccine**, **dose**, and **age checkpoint** also apply to this chart')
 
 # select filter for geographic area (can set default to specific value, such as: index = 28)
 geo_options = get_geo_options()
@@ -167,6 +173,8 @@ fig_line.update_xaxes(type='category') # display all values for x-axis by design
 
 st.plotly_chart(fig_line, use_container_width=True)
 
+st.markdown(''':mag_right: Select different filter choices to change which data are shown''')
+
 st.divider()
 
 # BAR CHART
@@ -178,6 +186,8 @@ st.divider()
 
 st.subheader('How do child vaccination rates compare based on sociodemographic factors?')
 
+st.caption(':arrow_forward: The previous filters for **vaccine**, **dose**, and **geographic area** also apply to this chart')
+st.caption(':arrow_forward: Available sociodemographic data is limited to age 24 months (not affected by filter for age checkpoint)')
 # apply previous filters (vaccine, dose, geographic area - but not age) to generate data subset that only includes 2 four-year birth cohorts 
 filter_soc_dem_data = (df_vacc['Vaccine'] == vacc_option) & (df_vacc['Dose'] == dose_option) & (df_vacc['Geographic Area'] == geo_option) & \
     ((df_vacc['Birth Cohort'] == '2014-2017') | (df_vacc['Birth Cohort'] == '2016-2019'))
@@ -215,6 +225,8 @@ fig_bar.update_xaxes(categoryorder = 'array', categoryarray = soc_dem_array) # s
 
 st.plotly_chart(fig_bar, use_container_width=True)
 
+st.markdown(''':mag_right: Explore further by selecting different filter choices to change which data are shown in the charts''')
+
 st.divider()
 
 st.subheader('How can I learn more about vaccinations for children?')
@@ -241,7 +253,7 @@ st.subheader(':green[Next Steps for MVP]')
 st.markdown('''- Connect to remote cloud storage: will try using requirements.txt instead of environment.yml
 - Add or modify content as necessary to ensure users understand context and intent of app, can interact with app easily, and can interpret visualizations easily and accurately
 - Experiment with different content layout (such as using sidebar to house data filters, etc.)
-- Need to refactor code to include error handling, at least one class, and a module with several functions
+- Need to refactor Python code to include a custom module with at least one class, multiple functions, and error handling (have already created some functions within main app file, so will need to package them into a module)
 - Create `README.md` file for GitHub repository describing project''')
 
 st.divider()
