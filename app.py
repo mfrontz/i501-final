@@ -71,6 +71,9 @@ def get_geo_options():
 
 df_vacc = read_data()
 
+# passed as kwarg to prevent display of Plotly toolbar in chart
+chart_config = {'displayModeBar': False}
+
 # INTRODUCTION
 
 st.title(':children_crossing: :rainbow[Protecting Children\'s Health]')
@@ -131,7 +134,7 @@ st.markdown('##### :green[' + dose_option + '] by Age :green[' + age_option + ']
 
 fig_map = px.choropleth(map_data, locations = 'State', color = 'Estimate (%)', color_continuous_scale = 'temps_r', locationmode = 'USA-states', scope = 'usa')
 
-st.plotly_chart(fig_map, use_container_width=True)
+st.plotly_chart(fig_map, use_container_width=True, config = chart_config)
 
 st.markdown(''':mag_right: Select different filter choices to change which data are shown''')
 
@@ -171,7 +174,7 @@ fig_line = px.line(line_data, x = 'Birth Year', y = 'Estimate (%)', color = 'Geo
 fig_line.update_layout(yaxis_range=[0,100]) # use 0-100 for y-axis scale
 fig_line.update_xaxes(type='category') # display all values for x-axis by designating as categories
 
-st.plotly_chart(fig_line, use_container_width=True)
+st.plotly_chart(fig_line, use_container_width=True, config = chart_config)
 
 st.markdown(''':mag_right: Select different filter choices to change which data are shown''')
 
@@ -223,7 +226,7 @@ fig_bar = px.bar(soc_dem_bar_data, x = soc_dem_option, y = 'Estimate (%)', color
 fig_bar.update_layout(yaxis_range=[0,100]) # use 0-100 for y-axis scale
 fig_bar.update_xaxes(categoryorder = 'array', categoryarray = soc_dem_array) # set preferred order for x-axis categories
 
-st.plotly_chart(fig_bar, use_container_width=True)
+st.plotly_chart(fig_bar, use_container_width=True, config = chart_config)
 
 st.markdown(''':mag_right: Keep exploring by using the filters to change which data are shown''')
 
