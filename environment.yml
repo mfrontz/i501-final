@@ -4,8 +4,8 @@ dependencies:
   - pip
   - pip:
     - ipykernel
+    - streamlit
     - pandas
     - plotly
-    - streamlit
     - python-dotenv
     - boto3
