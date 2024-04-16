@@ -75,9 +75,10 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([':syringe: Introduction', ':flag-us: Com
 
 # INTRODUCTION
 with tab1:
+    st.write(''':red[**Choose a tab above ⬆ to compare child vaccination rates by states, birth years, or sociodemographics**]''')
     st.write('##### What vaccinations should young children receive?')
-    st.markdown('''It's estimated that vaccinations prevent between 3.5 to 5 million deaths each year worldwide, [according to the World Health Organization](https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_1). \
-                To protect young children from serious (and potential life-threatening) diseases, the Centers for Disease Control and Prevention (CDC) \
+    st.markdown('''The World Health Organization estimates that vaccinations [prevent 3.5 to 5 million deaths each year](https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_1).  
+                To protect young children from serious and potential life-threatening diseases, the Centers for Disease Control and Prevention (CDC) \
                 recommend that children in the United States receive all necessary doses of these 10 vaccines by the time they reach 2 years of age:  
 - **DTaP vaccine** to protect against diphtheria, tetanus, and whooping cough (pertussis) 
 - **Hep A vaccine** to protect against hepatitis A
@@ -90,7 +91,6 @@ with tab1:
 - **Rotavirus vaccine** to protect against rotavirus
 - **Varicella zoster vaccine** to protect against chicken pox''')
     st.caption('''Note: **Combined 7-Vaccine Series** includes all doses for: DTaP, Hep B, Hib, MMR, PCV, Polio, and Varicella''')
-    st.write(''':red[**⬆ Choose a tab above to compare child vaccination rates by states, birth years, or sociodemographics**]''')
 
 # CHOROPLETH MAP
 with tab2:
