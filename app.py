@@ -109,8 +109,8 @@ with tab4:
     st.caption('⬅ Use filters in sidebar to choose which data are shown')
     vax.show_bar_chart()
     st.caption('*Sociodemographic data is only available for age 24 months and certain doses of vaccines')
-    st.caption('**FPL** = Federal Poverty Level (lower % FPL = lower family income, higher % FPL = higher family income)')
-    st.caption('**MSA** = Metropolitan Statistical Area (Urban = MSA Principal City, Suburban = MSA Non-Principal City, Rural = Non-MSA)')
+    st.caption('''**FPL** = Federal Poverty Level (lower % FPL = lower family income, higher % FPL = higher family income)  
+               **MSA** = Metropolitan Statistical Area (Urban = MSA Principal City, Suburban = MSA Non-Principal City, Rural = Non-MSA)''')
 
 # MORE INFO
 with tab5:
