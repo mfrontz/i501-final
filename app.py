@@ -86,7 +86,7 @@ with tab1:
 - **Hib vaccine** to protect against *Haemophilus influenzae* type b
 - **Influenza vaccine** to protect against seasonal flu
 - **MMR vaccine** to protect against measles, mumps, and German measles (rubella)
-- **PCV** to protect against pneumococcal disease
+- **PCV (pneumococcal conjugate vaccine)** to protect against pneumococcal disease
 - **Polio vaccine** to protect against polio
 - **Rotavirus vaccine** to protect against rotavirus
 - **Varicella zoster vaccine** to protect against chicken pox''')
