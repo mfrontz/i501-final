@@ -9,7 +9,7 @@ from vaccine import Vaccine
 
 import os
 from dotenv import load_dotenv
-#from utils.b2 import B2
+from utils.b2 import B2
 
 # set page title to display in browser tab - must be first Streamlit function called in app
 st.set_page_config(page_title = 'Child Vaccinations', page_icon = None)
