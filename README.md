@@ -10,7 +10,11 @@ The app provides interactive data visualizations that users can customize by cha
 
 The app also provides an overview of the recommended vaccinations for young children and links to a CDC website on child vaccinations designed for parents.
 
-The goal of the app is allow users to explore differences in vaccination rates, which may lead to wanting to learn more, such as: What factors might influence differences in vaccination rates? How can we ensure that more children in the community receive their recommended vaccinations?
+The goal of the app is allow users to explore differences in vaccination rates, which may lead to wanting to learn more, such as:
+
+- What factors influence differences in vaccination rates?
+- What happens if children don't receive their recommended vaccinations?
+- How can we ensure more children receive their recommended vaccinations?
 
 ## Data Description
 
