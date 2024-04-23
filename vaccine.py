@@ -9,8 +9,8 @@ class Vaccine():
     Class properties store data set, store filter options for vaccines and geographic areas, and store user-selected option for each filter
     Class methods read in data set, read in geographic area data, generate dynamic filter options dependent on other filters, and generate visualizations
     '''
-    def __init__(self):
-        self.data = self.read_data()
+    def __init__(self, df_csv):
+        self.data = self.fix_data(df_csv)
         self.vacc_options = self.get_vacc_options()
         self.geo_options = self.get_geo_options()
         self.vacc_option = None
@@ -21,13 +21,11 @@ class Vaccine():
         self.soc_dem_dose = None
 
     @st.cache_data
-    def read_data(_self):
+    def fix_data(_self, df_csv):
         '''
-        Read data from CSV and perform data cleaning for one data type as result of reading in data
+        Perform data cleaning for one data type as result of reading in data and return cleaned CSV back to self
         '''
         try:
-            df_csv = pd.read_csv('./data/child_vaccination_data_cleaned.csv')
-
             # convert Birth Year into string (otherwise will display as float value in charts)
             # first convert into nullable Integer and then into String
             df_csv['Birth Year'] = np.where(pd.isnull(df_csv['Birth Year']), df_csv['Birth Year'], df_csv['Birth Year'].astype('Int64').astype(str))
@@ -35,7 +33,7 @@ class Vaccine():
             return df_csv
         
         except:
-            st.write('Error reading vaccine data file')
+            st.write('Error processing vaccine data file')
             return None
     
     @st.cache_data

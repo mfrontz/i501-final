@@ -11,6 +11,9 @@ import os
 from dotenv import load_dotenv
 #from utils.b2 import B2
 
+# set page title to display in browser tab - must be first Streamlit function called in app
+st.set_page_config(page_title = 'Child Vaccinations', page_icon = None)
+
 # ------------------------------------------------------
 #                      APP CONSTANTS
 # ------------------------------------------------------
@@ -33,18 +36,18 @@ load_dotenv()
 #def get_data():
 #    b2.set_bucket(os.environ['B2_BUCKETNAME'])
 #    df_remote = b2.get_df(REMOTE_DATA)
-#    return df_remote
+ #   return df_remote
 
 # ------------------------------------------------------
 #                         APP
 # ------------------------------------------------------
 
-#df_vacc = get_data() # function in B2 to get data from remote server
+#df_csv = get_data() # function in B2 to get data from remote server
 
-st.set_page_config(page_title = 'Child Vaccinations', page_icon = None)
+df_csv = pd.read_csv('./data/child_vaccination_data_cleaned.csv')
 
 # create object using custom class Vaccine
-vax = Vaccine()
+vax = Vaccine(df_csv)
 
 # SIDEBAR WITH FILTERS
 with st.sidebar:
