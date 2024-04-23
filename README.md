@@ -1,6 +1,6 @@
 # Protecting Children's Health
 
-[child-vaccinations.streamlit.app](https://child-vaccinations.streamlit.app/)
+[child-vaccinations.streamlit.app](https://child-vaccinations.streamlit.app/){:target="_blank"}
 
 ## Overview
 
@@ -14,7 +14,7 @@ The goal of the app is allow users to explore differences in vaccination rates, 
 
 ## Data Description
 
-The original dataset used in this web app was downloaded from the [CDC Data Catalog](https://data.cdc.gov/Child-Vaccinations/Vaccination-Coverage-among-Young-Children-0-35-Mon/fhky-rtsk/about_data target="_blank"). 
+The original dataset used in this web app was downloaded from the [CDC Data Catalog](https://data.cdc.gov/Child-Vaccinations/Vaccination-Coverage-among-Young-Children-0-35-Mon/fhky-rtsk/about_data){:target="_blank"}. 
 
 The following steps were performed to clean and prepare the data for use in the web app:
 
