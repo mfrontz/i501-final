@@ -8,7 +8,7 @@ This web app allows users to conduct their own exploratory data analysis of a CD
 
 The app provides interactive data visualizations that users can customize by changing data filters for vaccine, dose, age checkpoint, geographic location (such as United States, specific state, etc.), and sociodemographic factor (such as race/ethnicity, poverty level, etc.).
 
-The app also provides an overview of the recommended vaccinations for young children and links to a CDC website on child vaccinations designed for parents.
+The app also provides an overview of the recommended vaccinations for young children and a link to a CDC website for parents that provides resources on child vaccinations.
 
 The goal of the app is allow users to explore differences in vaccination rates, which may lead them to want to find answers to questions such as:
 
@@ -27,7 +27,7 @@ The following steps were performed to clean and prepare the data for use in the 
 - Dropped rows that were missing data for the column named "Estimated (%)" which is the core data used in all the data visualizations (this only dropped 58 rows out of 118423 total rows)
 - Filled blank values for doses of certain vaccines based on CDC documentation that explained what those blank values actually represent (e.g., the "Combined 7 Series" vaccine did not list a dose value, but the rows for this vaccine represent children who have received the "Full Series" of this vaccine, etc.)
 - Renamed certain columns to make them more clear (e.g., renamed "Geography" column to "Geographic Area", renamed "Insurance Coverage" column to "Health Insurance Coverage", etc.)
-- Added a new column for state abbreviation by translating any state names in the "Geographic Area" column to their corresponding two-letter abbreviation. This was needed for the choropleth map of the United States, which requires state abbreviations to plot data values in the map.
+- Added a new column for state abbreviation by translating any state names in the "Geographic Area" column to their corresponding two-letter abbreviation. This was needed for the choropleth map of the United States, which requires state abbreviations to plot their corresponding data values.
 
 ## Algorithm Description
 
