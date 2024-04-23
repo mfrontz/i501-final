@@ -50,7 +50,7 @@ vax = Vaccine(df_csv)
 # SIDEBAR WITH FILTERS
 with st.sidebar:
 
-    st.write('**Select tab from right to compare data ⮕**')
+    st.write(':red[**Select tab from right to compare data ⮕**]')
     
     st.caption(':green[**⬇ Choose which vaccine data to show**]')
 
@@ -74,11 +74,11 @@ with st.sidebar:
 
 # TABS
 st.subheader(':children_crossing: :rainbow[Protecting Children\'s Health]')
-tab1, tab2, tab3, tab4, tab5 = st.tabs([':syringe: Introduction', ':flag-us: Compare States', ':chart_with_upwards_trend: Compare Birth Years', ':bar_chart: Compare Sociodemographics', ':mag_right: Learn More'])
+tab1, tab2, tab3, tab4, tab5 = st.tabs([':syringe: Introduction', ':round_pushpin: Compare States', ':chart_with_upwards_trend: Compare Birth Years', ':bar_chart: Compare Sociodemographics', ':mag_right: Learn More'])
 
 # INTRODUCTION
 with tab1:
-    st.write(''':red[**Select a tab above ⬆ to compare child vaccination rates by states, birth years, or sociodemographics**]''')
+    st.write(''':red[Select a tab above ⬆ to compare child vaccination rates by states, birth years, or sociodemographics]''')
     st.write('##### What vaccinations should young children receive?')
     st.markdown('''The World Health Organization estimates that vaccinations [prevent 3.5 to 5 million deaths each year](https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_1).  
                 To protect young children from serious and potential life-threatening diseases, the Centers for Disease Control and Prevention (CDC) \
@@ -97,19 +97,19 @@ with tab1:
 
 # CHOROPLETH MAP
 with tab2:
-    st.caption(':red[⬅ Use filters in sidebar to choose which data are shown]')
+    st.write(':red[⬅ Use filters in sidebar to choose which data are shown]')
     st.write('##### :green[How do child vaccination rates compare across states?]')
     vax.show_choropleth_map()
 
 # LINE GRAPH
 with tab3:
-    st.caption(':red[⬅ Use filters in sidebar to choose which data are shown]')
+    st.write(':red[⬅ Use filters in sidebar to choose which data are shown]')
     st.write('##### :blue[How do child vaccination rates compare by year of birth?]')
     vax.show_line_graph()
 
 # BAR CHART
 with tab4:
-    st.caption(':red[⬅ Use filters in sidebar to choose which data are shown]')
+    st.write(':red[⬅ Use filters in sidebar to choose which data are shown]')
     st.write('''##### :violet[How do child vaccination rates compare by sociodemographic factors?]''')
     vax.show_bar_chart()
     st.caption('*Sociodemographic data is only available for age 24 months and certain doses of vaccines')
