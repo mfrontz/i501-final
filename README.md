@@ -8,7 +8,7 @@ This web app allows users to conduct their own exploratory data analysis of a CD
 
 The app provides interactive data visualizations that users can customize by changing data filters for vaccine, dose, age checkpoint, geographic location (such as United States, specific state, etc.), and sociodemographic factor (such as race/ethnicity, poverty level, etc.).
 
-The app also provides an overview of the recommended vaccinations for young children and a link to a CDC website for parents that provides resources on child vaccinations.
+The app also provides an overview of the recommended vaccinations for young children and a link to a CDC website for parents, which provides resources on child vaccinations.
 
 The goal of the app is allow users to explore differences in vaccination rates, which may lead them to want to find answers to questions such as:
 
@@ -27,7 +27,7 @@ The following steps were performed to clean and prepare the data for use in the 
 - Dropped rows that were missing data for the column named "Estimated (%)" which is the core data used in all the data visualizations (this only dropped 58 rows out of 118423 total rows)
 - Filled blank values for doses of certain vaccines based on CDC documentation that explained what those blank values actually represent (e.g., the "Combined 7 Series" vaccine did not list a dose value, but the rows for this vaccine represent children who have received the "Full Series" of this vaccine, etc.)
 - Renamed certain columns to make them more clear (e.g., renamed "Geography" column to "Geographic Area", renamed "Insurance Coverage" column to "Health Insurance Coverage", etc.)
-- Added a new column for state abbreviation by translating any state names in the "Geographic Area" column to their corresponding two-letter abbreviation. This was needed for the choropleth map of the United States, which requires state abbreviations to plot their corresponding data values.
+- Added a new column for state abbreviation by translating any state names in the "Geographic Area" column into their corresponding two-letter abbreviation. This was needed for the choropleth map of the United States, which requires two-letter abbreviations for states in order to plot their corresponding data values.
 
 ## Algorithm Description
 
@@ -35,7 +35,7 @@ The app presents 3 pre-designed data visualizations (choropleth map, line graph,
 
 The variables used in the data visualizations are set by the filter selections, so when the user changes a filter selection, the visualizations update automatically in real-time.
 
-In addition, there are dependencies among certain filters. For example, the choice of vaccine determines what choices are available for vaccine dose. The choice of vaccine dose affects what choices are available for the age checkpoints. So functions are used to dynamically update the choices of a "child" filter whenever its "parent" filter is changed.
+In addition, there are dependencies among certain filters. As one example, the choice of vaccine determines what choices are available for vaccine dose. So the filters include functions that dynamically update the available choices of a "child" filter whenever its "parent" filter is changed.
 
 ## Tools Used
 
@@ -55,4 +55,6 @@ The data available within the original dataset is limited by how it is collected
 
 The sociodemographic data (i.e., race/ethnicity, poverty level, health insurance coverage, and urbanicity) are only available for the 4-year birth cohorts. There are only two 4-year birth cohorts in the dataset, with the most recent being children born in 2016-2019.
 
-Finally, the data is collected by the CDC through a survey. A random sampling of parents is called, and parents choose whether to participate (which includes agreeing to allow the CDC to contact their child's pediatrician(s) to obtain vaccination history). The vaccination rates presented in the dataset are thus estimated percentages (which is how they are labeled in the dataset and in the app). The dataset does include a 95% confidence interval for each estimated percent. However, the 95% CI values were not presented in the app.
+Finally, the data is collected by the CDC through a survey. A random sampling of parents is called, and parents choose whether to participate (which includes agreeing to allow the CDC to contact their child's pediatrician(s) to obtain vaccination history). Obviously, certain parents may be more willing (or less willing) to share this information, which may affect the results.
+
+Thus, the vaccination rates presented in the dataset are **estimated** percentages (which is how they are labeled in the dataset and in the app). The dataset does include a 95% confidence interval for each estimated percent; however, it was decided to not present the 95% CI values in the app.
