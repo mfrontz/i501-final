@@ -43,6 +43,7 @@ In addition, there are dependencies among certain filters. For example, the choi
 - Pandas and Numpy functions are used for data manipulation in the app
 - Plotly Express is used for producing the data visualizations in the app
 - Streamlit Community Cloud is used to host the app
+- Backblaze is used to store the dataset used in the app
 
 ## Ethical Concerns
 
