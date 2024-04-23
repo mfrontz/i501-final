@@ -17,7 +17,7 @@ st.set_page_config(page_title = 'Child Vaccinations', page_icon = None)
 # ------------------------------------------------------
 #                      APP CONSTANTS
 # ------------------------------------------------------
-#REMOTE_DATA = 'child_vaccination_data_cleaned.csv'
+REMOTE_DATA = 'child_vaccination_data_cleaned.csv'
 
 # ------------------------------------------------------
 #                        CONFIG
@@ -25,26 +25,24 @@ st.set_page_config(page_title = 'Child Vaccinations', page_icon = None)
 load_dotenv()
 
 # load Backblaze connection
-#b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
-#        key_id=os.environ['B2_KEYID'],
-#        secret_key=os.environ['B2_APPKEY'])
+b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
+        key_id=os.environ['B2_KEYID'],
+        secret_key=os.environ['B2_APPKEY'])
 
 # ------------------------------------------------------
 #                        CACHING
 # ------------------------------------------------------
-#@st.cache_data
-#def get_data():
-#    b2.set_bucket(os.environ['B2_BUCKETNAME'])
-#    df_remote = b2.get_df(REMOTE_DATA)
- #   return df_remote
+@st.cache_data
+def get_data():
+    b2.set_bucket(os.environ['B2_BUCKETNAME'])
+    df_remote = b2.get_df(REMOTE_DATA)
+    return df_remote
 
 # ------------------------------------------------------
 #                         APP
 # ------------------------------------------------------
 
-#df_csv = get_data() # function in B2 to get data from remote server
-
-df_csv = pd.read_csv('./data/child_vaccination_data_cleaned.csv')
+df_csv = get_data() # function in B2 to get data from remote server
 
 # create object using custom class Vaccine
 vax = Vaccine(df_csv)
