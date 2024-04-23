@@ -50,7 +50,9 @@ vax = Vaccine(df_csv)
 # SIDEBAR WITH FILTERS
 with st.sidebar:
 
-    st.caption(':green[**⬇ Choose which vaccine data are shown**]')
+    st.write('**Select tab from right to compare data ⮕**')
+    
+    st.caption(':green[**⬇ Choose which vaccine data to show**]')
 
     vax.vacc_option = st.selectbox(':green[Select Vaccine]', vax.vacc_options, index = 1, help = 'Vaccines recommended for children by the time they reach 2 years of age')
 
@@ -76,7 +78,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([':syringe: Introduction', ':flag-us: Com
 
 # INTRODUCTION
 with tab1:
-    st.write(''':red[**Choose a tab above ⬆ to compare child vaccination rates by states, birth years, or sociodemographics**]''')
+    st.write(''':red[**Select a tab above ⬆ to compare child vaccination rates by states, birth years, or sociodemographics**]''')
     st.write('##### What vaccinations should young children receive?')
     st.markdown('''The World Health Organization estimates that vaccinations [prevent 3.5 to 5 million deaths each year](https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_1).  
                 To protect young children from serious and potential life-threatening diseases, the Centers for Disease Control and Prevention (CDC) \
@@ -95,20 +97,20 @@ with tab1:
 
 # CHOROPLETH MAP
 with tab2:
+    st.caption(':red[⬅ Use filters in sidebar to choose which data are shown]')
     st.write('##### :green[How do child vaccination rates compare across states?]')
-    st.caption('⬅ Use filters in sidebar to choose which data are shown')
     vax.show_choropleth_map()
 
 # LINE GRAPH
 with tab3:
+    st.caption(':red[⬅ Use filters in sidebar to choose which data are shown]')
     st.write('##### :blue[How do child vaccination rates compare by year of birth?]')
-    st.caption('⬅ Use filters in sidebar to choose which data are shown')
     vax.show_line_graph()
 
 # BAR CHART
 with tab4:
+    st.caption(':red[⬅ Use filters in sidebar to choose which data are shown]')
     st.write('''##### :violet[How do child vaccination rates compare by sociodemographic factors?]''')
-    st.caption('⬅ Use filters in sidebar to choose which data are shown')
     vax.show_bar_chart()
     st.caption('*Sociodemographic data is only available for age 24 months and certain doses of vaccines')
     st.caption('''**FPL** = Federal Poverty Level (lower % FPL = lower family income, higher % FPL = higher family income)  
