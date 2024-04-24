@@ -57,7 +57,7 @@ class Vaccine():
         Order = US first, then States alphabetically with City/County breakouts ordered after their state
         Note: Geographic order was modified to intentionally exclude certain geographic areas in original dataset
         For example, HHS Regions were excluded because they are less meaningful to target users and sociodemographic data are not available for HHS Regions
-        US territories were also excluded they tended to have missing data, and it was decided to focus on showing data for US states and cites/counties
+        US territories were also excluded they tended to have missing data and also lack sociodemographic data
         '''
         try:
             df_geo_areas = pd.read_csv('./data/geo_areas_order.csv')
