@@ -28,21 +28,23 @@ The following steps were performed in Python to clean and prepare the data for u
 - Dropped rows that were missing data for the column named "Estimated (%)" which is the core data used in all the data visualizations (this only dropped 58 rows out of 118423 total rows)
 - Filled blank values for doses of certain vaccines based on CDC documentation that explained what those blank values actually represent (e.g., the "Combined 7 Series" vaccine did not list a dose value, but the rows for this vaccine represent children who have received the "Full Series" of this vaccine, etc.)
 - Renamed certain columns to make them more clear (e.g., renamed "Geography" column to "Geographic Area", renamed "Insurance Coverage" column to "Health Insurance Coverage", etc.)
-- Added a new column for state abbreviation by translating any state names in the "Geographic Area" column into their corresponding two-letter abbreviation. This was needed for the choropleth map of the United States, which requires two-letter abbreviations for states in order to plot their corresponding data values.
+- Added a new column for state abbreviation by translating any state names in the "Geographic Area" column into their corresponding two-letter abbreviation. This was needed for the choropleth map of the United States, which requires two-letter state abbreviations in order to plot their corresponding data values on the map.
 
-[Code used to clean data](https://github.com/mfrontz/i501-labs/blob/main/vacc_data/data_cleaned.ipynb)
+[Code used to clean and prepare data](https://github.com/mfrontz/i501-labs/blob/main/vacc_data/data_cleaned.ipynb)
 
 ## Algorithm Description
 
-The app presents 3 pre-designed data visualizations (choropleth map, line graph, and bar chart) which the user can customize using a set of data filters. The visualizations were designed to:
+The app presents 3 pre-designed data visualizations (choropleth map, line graph, and bar chart) which the user can customize using a set of data filters (e.g., by selecting a vaccine, dose, age checkpoint, etc.).
+
+The visualizations were designed to:
 
 - maximize the use of the available variables in the dataset
-- match the data to a visualization type that would appropriate and easy to understand
-- present different aspects of the available data in each visualization type
+- match the data to an appropriate visualization type that would be easy to interpret
+- present different aspects of the available dataset in each visualization type
 
-The variables used in the data visualizations are set by the filter selections, so when the user changes a filter selection, the visualizations update automatically in real-time.
+The variables used in the data visualizations are set by the filter selections, so when the user changes a filter selection, the visualizations automatically update in real-time.
 
-In addition, there are dependencies among certain filters. As one example, the choice of vaccine determines what choices are available for vaccine dose. So the filters include functions that dynamically update the available choices of a "child" filter whenever its "parent" filter is changed.
+In addition, there are dependencies among certain data filters. As one example, the choice of vaccine determines what choices are available for vaccine dose. So the filters that have dependencies include function calls that dynamically update the available choices for the "child" filter whenever its "parent" filter is changed.
 
 ## Tools Used
 
@@ -64,4 +66,4 @@ The sociodemographic data (i.e., race/ethnicity, poverty level, health insurance
 
 Finally, the data is collected by the CDC through the [National Immunization Survey-Child](https://www.cdc.gov/vaccines/imz-managers/nis/about.html#nis-child). A random sampling of parents is telephoned, and parents choose whether to participate (which includes agreeing to allow the CDC to contact their child's healthcare provider(s) to obtain vaccination history). Obviously, certain parents may be more willing (or less willing) to participate and share this information, which may affect the results.
 
-Thus, the vaccination rates presented in the dataset are **estimated** percentages (which is how they are labeled in the dataset and in the app). The dataset does include a 95% confidence interval for each estimated percent; however, it was decided to not present the 95% CI values in the app.
+Thus, the vaccination rates presented in the dataset are **estimated** percentages (which is how they are labeled in the dataset and in the app). The dataset does include a 95% confidence interval for each estimated percent; however, it was decided to not present the 95% CI values in the visualizations.
