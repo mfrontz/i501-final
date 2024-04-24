@@ -15,6 +15,7 @@ The goal of the app is allow users to explore differences in vaccination rates, 
 - What barriers prevent children from receiving their recommended vaccinations?
 - What happens if children don't receive their recommended vaccinations?
 - How can we ensure more children receive their recommended vaccinations?
+- Where can I learn more about how to best protect my child's health?
 
 ## Data Description
 
@@ -31,7 +32,11 @@ The following steps were performed to clean and prepare the data for use in the 
 
 ## Algorithm Description
 
-The app presents 3 pre-designed data visualizations (choropleth map, line graph, and bar chart) which the user can customize using a set of data filters.
+The app presents 3 pre-designed data visualizations (choropleth map, line graph, and bar chart) which the user can customize using a set of data filters. The visualizations were designed to:
+
+- maximize the use of the available variables in the dataset
+- match the data to a visualization type that would appropriate and easy to understand
+- present different aspects of the available data in each visualization type
 
 The variables used in the data visualizations are set by the filter selections, so when the user changes a filter selection, the visualizations update automatically in real-time.
 
