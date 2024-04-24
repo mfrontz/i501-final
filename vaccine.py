@@ -7,7 +7,7 @@ import plotly.express as px
 class Vaccine():
     '''
     Class properties store data set, store filter options for vaccines and geographic areas, and store user-selected option for each filter
-    Class methods read in data set, read in geographic area data, generate dynamic filter options dependent on other filters, and generate visualizations
+    Class methods read in (and fix) data set, read in geographic area data, generate dynamic filter options dependent on other filters, and generate visualizations
     '''
     def __init__(self, df_csv):
         self.data = self.fix_data(df_csv)
@@ -54,7 +54,10 @@ class Vaccine():
         '''
         Get and return geographic area options for chart filter
         Order contained in separate csv file created from dataset because preferred order is unique (not strictly alphabetical)
-        Order = US first, then HHS Regions by number, then States alphabetically with City/County breakouts ordered after their state
+        Order = US first, then States alphabetically with City/County breakouts ordered after their state
+        Note: Geographic order was modified to intentionally exclude certain geographic areas in original dataset
+        For example, HHS Regions were excluded because they are less meaningful to target users and sociodemographic data are not available for HHS Regions
+        US territories were also excluded they tended to have missing data, and it was decided to focus on showing data for US states and cites/counties
         '''
         try:
             df_geo_areas = pd.read_csv('./data/geo_areas_order.csv')
@@ -112,7 +115,7 @@ class Vaccine():
 
     def show_choropleth_map(self):
         '''
-        Choropleth map displays estimated vaccination rate (%) for each state for Birth Year 2020
+        Choropleth map displays estimated vaccination rate (%) for each state for Birth Year 2020 (most recent in dataset)
         Data filtered by selections for vaccine, dose, and age checkpoint
         '''
         # apply selected filters to generate data subset for choropleth map
