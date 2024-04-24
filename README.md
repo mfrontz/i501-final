@@ -1,6 +1,6 @@
 # Protecting Children's Health
 
-<a href="https://child-vaccinations.streamlit.app/" target="_blank">child-vaccinations.streamlit.app</a>
+[child-vaccinations.streamlit.app](https://child-vaccinations.streamlit.app/)
 
 ## Overview
 
@@ -18,7 +18,7 @@ The goal of the app is allow users to explore differences in vaccination rates, 
 
 ## Data Description
 
-The original dataset used in this web app was downloaded from the <a href="https://data.cdc.gov/Child-Vaccinations/Vaccination-Coverage-among-Young-Children-0-35-Mon/fhky-rtsk/about_data" target="_blank">CDC Data Catalog</a>. 
+The original dataset used in this web app was downloaded from the [CDC Data Catalog](https://data.cdc.gov/Child-Vaccinations/Vaccination-Coverage-among-Young-Children-0-35-Mon/fhky-rtsk/about_data). 
 
 The following steps were performed to clean and prepare the data for use in the web app:
 
@@ -39,9 +39,9 @@ In addition, there are dependencies among certain filters. As one example, the c
 
 ## Tools Used
 
-- The app is built in Python using the Streamlit library
+- The web app is built in Python using the [Streamlit library](https://docs.streamlit.io/get-started)
 - Pandas and Numpy functions are used for data manipulation in the app
-- Plotly Express is used for producing the data visualizations in the app
+- Plotly Express is used to produce the data visualizations in the app
 - Streamlit Community Cloud is used to host the app
 - Backblaze is used to store the dataset used in the app
 
@@ -55,6 +55,6 @@ The data available within the original dataset is limited by how it is collected
 
 The sociodemographic data (i.e., race/ethnicity, poverty level, health insurance coverage, and urbanicity) are only available for the 4-year birth cohorts. There are only two 4-year birth cohorts in the dataset, with the most recent being children born in 2016-2019.
 
-Finally, the data is collected by the CDC through a survey. A random sampling of parents is called, and parents choose whether to participate (which includes agreeing to allow the CDC to contact their child's pediatrician(s) to obtain vaccination history). Obviously, certain parents may be more willing (or less willing) to share this information, which may affect the results.
+Finally, the data is collected by the CDC through the [National Immunization Survey-Child](https://www.cdc.gov/vaccines/imz-managers/nis/about.html#nis-child). A random sampling of parents is telephoned, and parents choose whether to participate (which includes agreeing to allow the CDC to contact their child's healthcare provider(s) to obtain vaccination history). Obviously, certain parents may be more willing (or less willing) to participate and share this information, which may affect the results.
 
 Thus, the vaccination rates presented in the dataset are **estimated** percentages (which is how they are labeled in the dataset and in the app). The dataset does include a 95% confidence interval for each estimated percent; however, it was decided to not present the 95% CI values in the app.
