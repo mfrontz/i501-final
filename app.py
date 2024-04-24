@@ -79,7 +79,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([':syringe: Introduction', ':round_pushpi
 # INTRODUCTION
 with tab1:
     st.write(''':red[Select a tab above ⬆ to compare child vaccination rates by states, birth years, or sociodemographics]''')
-    st.write('##### What vaccinations should young children receive?')
+    st.write('#### What vaccinations should young children receive?')
     st.markdown('''The World Health Organization estimates that vaccinations [prevent 3.5 to 5 million deaths each year](https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_1).  
                 To protect young children from serious and potential life-threatening diseases, the Centers for Disease Control and Prevention (CDC) \
                 recommend that children in the United States receive all necessary doses of these 10 vaccines by the time they reach 2 years of age:  
@@ -98,19 +98,19 @@ with tab1:
 # CHOROPLETH MAP
 with tab2:
     st.write(':red[⬅ Use filters in sidebar to choose which data are shown]')
-    st.write('##### :green[How do child vaccination rates compare across states?]')
+    st.write('#### How do child vaccination rates compare across states?')
     vax.show_choropleth_map()
 
 # LINE GRAPH
 with tab3:
     st.write(':red[⬅ Use filters in sidebar to choose which data are shown]')
-    st.write('##### :blue[How do child vaccination rates compare by year of birth?]')
+    st.write('#### How do child vaccination rates compare by year of birth?')
     vax.show_line_graph()
 
 # BAR CHART
 with tab4:
     st.write(':red[⬅ Use filters in sidebar to choose which data are shown]')
-    st.write('''##### :violet[How do child vaccination rates compare by sociodemographic factors?]''')
+    st.write('''#### How do child vaccination rates compare by sociodemographics?''')
     vax.show_bar_chart()
     st.caption('*Sociodemographic data is only available for age 24 months and certain doses of vaccines')
     st.caption('''**FPL** = Federal Poverty Level (lower % FPL = lower family income, higher % FPL = higher family income)  
@@ -118,7 +118,7 @@ with tab4:
 
 # MORE INFO
 with tab5:
-    st.write('##### Where can I learn more about vaccinations for children?')
+    st.write('#### Where can I learn more about vaccinations for children?')
     st.image('./data/toddler-vaccination.jpg', width = 400)
     st.markdown('''The CDC has a [website to help parents learn more about vaccines for their children](https://www.cdc.gov/vaccines/parents/), including:  
 - Why vaccines are important for protecting children's health
