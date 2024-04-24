@@ -21,7 +21,7 @@ The goal of the app is allow users to explore differences in vaccination rates, 
 
 The original dataset used in this web app was downloaded from the [CDC Data Catalog](https://data.cdc.gov/Child-Vaccinations/Vaccination-Coverage-among-Young-Children-0-35-Mon/fhky-rtsk/about_data). 
 
-The following steps were performed to clean and prepare the data for use in the web app:
+The following steps were performed in Python to clean and prepare the data for use in the web app:
 
 - Pivoted a column named "Dimension Type" (and its corresponding column of values named "Dimension") into multiple columns, as the CDC used this column to store data for multiple sociodemographic variables
 - Split a column named "Birth Year/Birth Cohort" into two distinct columns because some of the other columns in the dataset are only applicable to birth years, while other columns are only applicable to birth cohorts
@@ -29,6 +29,8 @@ The following steps were performed to clean and prepare the data for use in the 
 - Filled blank values for doses of certain vaccines based on CDC documentation that explained what those blank values actually represent (e.g., the "Combined 7 Series" vaccine did not list a dose value, but the rows for this vaccine represent children who have received the "Full Series" of this vaccine, etc.)
 - Renamed certain columns to make them more clear (e.g., renamed "Geography" column to "Geographic Area", renamed "Insurance Coverage" column to "Health Insurance Coverage", etc.)
 - Added a new column for state abbreviation by translating any state names in the "Geographic Area" column into their corresponding two-letter abbreviation. This was needed for the choropleth map of the United States, which requires two-letter abbreviations for states in order to plot their corresponding data values.
+
+[Code used to clean data](https://github.com/mfrontz/i501-labs/blob/main/vacc_data/data_cleaned.ipynb)
 
 ## Algorithm Description
 
