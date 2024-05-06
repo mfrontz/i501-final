@@ -80,7 +80,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([':syringe: Introduction', ':round_pushpi
 with tab1:
     st.write(''':red[Select a tab above ⬆ to compare child vaccination rates by states, birth years, or sociodemographics]''')
     st.write('#### What vaccinations should young children receive?')
-    st.markdown('''The World Health Organization estimates that vaccinations [prevent 3.5 to 5 million deaths each year](https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_1).  
+    st.markdown('''The World Health Organization estimates that vaccinations [prevent 3.5 to 5 million deaths each year](https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_1). 
                 To protect young children from serious and potential life-threatening diseases, the Centers for Disease Control and Prevention (CDC) \
                 recommend that children in the United States receive all necessary doses of these 10 vaccines by the time they reach 2 years of age:  
 - **DTaP vaccine** to protect against diphtheria, tetanus, and whooping cough (pertussis) 
