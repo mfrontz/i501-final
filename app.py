@@ -122,7 +122,7 @@ with tab4:
 with tab5:
     st.write('#### Where can I learn more about vaccinations for children?')
     st.image('./data/toddler-vaccination.jpg', width = 400)
-    st.markdown('''The CDC has a [website to help parents learn more about vaccines for their children](https://www.cdc.gov/vaccines/parents/), including:  
+    st.markdown('''The CDC has a [website to help parents learn more about vaccines for their children](https://www.cdc.gov/vaccines-children/), including:  
 - Why vaccines are important for protecting children's health
 - Recommended vaccine schedules by child age
 - Advice for preparing for your child's vaccine visit
